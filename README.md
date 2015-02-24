@@ -1,2 +1,2 @@
-# snippets
-Collection of code snippets found
+# Snippets
+Collection of code snippets mostly found
