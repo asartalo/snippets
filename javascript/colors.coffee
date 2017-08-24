@@ -13,7 +13,7 @@ stringToColour = (str) ->
     colour += ('00' + (hash >> i++ * 8 & 0xFF).toString(16)).slice(-2)
   colour
 
-# Checks whether a color is bright
+# Checks whether a color is bright or dark
 isDarkColor = (hex) ->
   # Formula taken from http://www.w3.org/TR/AERT - color brightness
   m = hex.slice(1).match(/.{1,2}/g)
