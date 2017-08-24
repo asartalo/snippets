@@ -1,0 +1,8 @@
+@function rem($size-in-px) {
+  @return ($size-in-px / $font-size-root-in-px) * 1rem;
+}
+
+@function percent($part, $whole) {
+  @return ($part / $whole) * 100%;
+}
+
