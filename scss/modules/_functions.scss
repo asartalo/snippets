@@ -1,8 +1,24 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
 @function rem($size-in-px) {
-  @return ($size-in-px / $font-size-root-in-px) * 1rem;
+  @return ratio($size-in-px, $base-font-size-root) * 1rem;
+}
+
+@function em($size-in-px, $parent-size-in-px) {
+  @return ratio($size-in-px, $parent-size-in-px) * 1em;
 }
 
 @function percent($part, $whole) {
-  @return ($part / $whole) * 100%;
+  @return ratio($part, $whole) * 100%;
+}
+
+@function ratio($part, $whole) {
+  @return strip-unit($part) / strip-unit($whole);
 }
 
