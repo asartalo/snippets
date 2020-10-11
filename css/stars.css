@@ -1,0 +1,35 @@
+/**
+ * Use to show star ratings.
+ *
+ * Given the following html structure:
+ *
+ * ```html
+ * <div class="star-wrapper">
+ * <span class="stars" style="width: 50%"></span>
+ * </div>
+ * ```
+ *
+ * ...this will color the stars depending on the rating.
+ *
+ * If this was a 5-star rating system, 50% would correspond to 2.5 stars, 100%
+ * 5 stars, etc.
+ */
+.star-wrapper {
+  position: relative;
+  display: inline-block;
+  color: #aaa;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffc315; /** a shade of yellow **/
+}
+
+.star-wrapper::before, .stars::before {
+  font-family: 'FontAwesome';
+  content: "\f005 \0020 \f005 \0020 \f005 \0020 \f005 \0020 \f005 \0020 \f005 \0020"
+}
